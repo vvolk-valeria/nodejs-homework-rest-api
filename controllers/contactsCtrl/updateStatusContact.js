@@ -1,11 +1,11 @@
 const {Contact, joiSchemes} = require('../../models/contact');
 
-const changeContactById = async (req, res, next) => {
+const updateStatusContact = async (req, res, next) => {
     try {
-        const {error} = joiSchemes.joiContactSchema.validate(req.body);
+        const {error} = joiSchemes.joiContactFavoriteSchema.validate(req.body);
  
             if(error) {
-                return res.status(400).json({message:"missing fields"})
+                return res.status(400).json({message:"missing field favorite"})
             }
 
         const {contactId} = req.params;
@@ -27,4 +27,4 @@ const changeContactById = async (req, res, next) => {
     }
   }
 
-module.exports = changeContactById;
+module.exports = updateStatusContact;
