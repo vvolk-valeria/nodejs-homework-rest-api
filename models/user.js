@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const Joi = require('joi');
-
+const subscriptionArray = ['starter', 'pro', 'business'];
 
 const userSchema = new mongoose.Schema({
   password: {
@@ -15,8 +15,8 @@ const userSchema = new mongoose.Schema({
   },
   subscription: {
     type: String,
-    enum: ["starter", "pro", "business"],
-    default: "starter"
+    enum: subscriptionArray,
+    default:'starter'
   },
   token: {
     type: String,
@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema({
 const joiSignupSchema = Joi.object({
   password: Joi.string().min(6).required(),
   email: Joi.string().min(5).required(), 
-  subscription: Joi.string().valueOf("starter", "pro", "business"),
+  subscription: Joi.string().valid(...subscriptionArray),
   token: Joi.string()
 });
 
@@ -37,11 +37,16 @@ const joiLoginSchema = Joi.object({
   password: Joi.string().min(6).required(),
   email: Joi.string().min(5).required(), 
 });
+
+const joiSubscriptionSchema = Joi.object({
+  subscription: Joi.string().valid(...subscriptionArray).required()
+});
   
 
 const joiSchemes = {
   joiSignupSchema,
   joiLoginSchema,
+  joiSubscriptionSchema,
 };
 
 

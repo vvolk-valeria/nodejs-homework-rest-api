@@ -2,7 +2,7 @@ const {User} = require('./../../models/user');
 
 const logout = async (req, res, next) => {
     try {
-        const {_id} = req.user;
+        const {_id} = req.user; 
         const user = await User.findByIdAndUpdate(_id, {token: ''});
 
         if (!user) {
@@ -19,28 +19,6 @@ const logout = async (req, res, next) => {
     } catch (error) {
         next(error);
     }
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-    res.status(204).json({
-        status: "No Content",
-        code: 204
-        })
-
-
-
-
 
 
 }

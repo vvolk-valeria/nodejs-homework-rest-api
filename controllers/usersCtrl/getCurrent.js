@@ -2,6 +2,7 @@ const {User} = require('./../../models/user');
 
 const getCurrent = async (req, res, next) => {
     try {
+
         const {_id} = req.user;
         const user = await User.findById(_id);
 

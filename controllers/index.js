@@ -3,5 +3,5 @@ const usersCtrl = require('./usersCtrl');
 
 module.exports = {
     contactsCtrl,
-    usersCtrl,
+    usersCtrl
 }

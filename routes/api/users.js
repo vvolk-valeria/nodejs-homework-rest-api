@@ -14,5 +14,7 @@ router.post('/logout', authorization, usersCtrl.logout);
 
 router.get('/current', authorization, usersCtrl.getCurrent);
 
+router.patch('/', authorization, usersCtrl.updateUserSubscription);
+
 
 module.exports = router;
