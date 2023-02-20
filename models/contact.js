@@ -20,7 +20,7 @@ const contactSchema = new mongoose.Schema({
       default: false,
     },
     owner: {
-      type: SchemaTypes.ObjectId,
+      type: mongoose.SchemaTypes.ObjectId,
       ref: 'user',
     }
 }, {versionKey: false, timestamps: true});
