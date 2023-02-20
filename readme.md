@@ -9,7 +9,7 @@
 
 - [hw02](readme/hw02-express.md)
 - [hw03](readme/hw03-mongodb.md)
-- [hw04]((readme/hw04-auth.md)
+- [hw04](readme/hw04-auth.md)
 - hw05
 - hw06
 
