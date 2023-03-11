@@ -6,7 +6,7 @@ const {authCtrl} = require('../../controllers');
 const authorization = require('../../middlewares/auth');
 
 
-router.post('/signup', authCtrl.signup);
+router.post('/register', authCtrl.register);
 
 router.post('/login', authCtrl.login);
 
