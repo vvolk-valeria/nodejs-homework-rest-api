@@ -1,4 +1,4 @@
-const {User} = require('./../../models/user');
+const {User} = require('../../models/user');
 
 const logout = async (req, res, next) => {
     try {
@@ -19,7 +19,6 @@ const logout = async (req, res, next) => {
     } catch (error) {
         next(error);
     }
-
 
 }
 
