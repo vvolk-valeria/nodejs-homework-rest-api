@@ -11,7 +11,7 @@
 - [hw03](readme/hw03-mongodb.md)
 - [hw04](readme/hw04-auth.md)
 - [hw05](readme/hw05-avatars.md)
-- hw06
+- [hw06](readme/hw06-email.md)
 
 Кожна нова гілка для др повинна робитися з master
 
