@@ -23,6 +23,10 @@ const login = async (req, res, next) => {
         throw error;
     }
 
+    if (!user.verify) {
+        return res.status(400).json({message:"Email is not verify"});
+    }
+
     const passwordCompare = await bcrypt.compare(password, user.password); 
 
     if (!passwordCompare) {

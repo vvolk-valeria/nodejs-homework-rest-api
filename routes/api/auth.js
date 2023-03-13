@@ -10,6 +10,10 @@ router.post('/register', authCtrl.register);
 
 router.post('/login', authCtrl.login);
 
+router.get('/verify/:verificationToken', authCtrl.verifyEmail);
+
+router.post('/verify', authCtrl.resendVerifyEmail);
+
 router.post('/logout', authorization, authCtrl.logout);
 
 
